@@ -1,0 +1,54 @@
+{
+  "name": "MedAir3",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://ramin-xanif-muslim.github.io/MedAir3",
+  "dependencies": {
+    "@chakra-ui/react": "^2.6.0",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.4.6",
+    "antd-mask-input": "^2.0.7",
+    "axios": "^1.4.0",
+    "chakra": "^0.0.3",
+    "dayjs": "^1.11.7",
+    "framer-motion": "^10.12.4",
+    "gh-pages": "^5.0.0",
+    "moment": "^2.29.4",
+    "react": "^18.2.0",
+    "react-canvas-draw": "^1.2.1",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.11.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.3.7"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

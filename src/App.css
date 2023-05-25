@@ -1,0 +1,39 @@
+/* @import '~antd/dist/antd.min.css'; */
+:root {
+    --brent-color-lite: #fbbacb;
+    --brent-color: #ff7fd4;
+    --brent-color-bark: #f7427b;
+}
+
+.brent-bg-color {
+    background: var(--brent-color-lite);
+}
+.brent-color {
+    color: var(--brent-color);
+}
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: linear-gradient(135deg, #ff7fd4, #f7427b);
+    box-shadow: 0 0 20px #ff7fd4, 0 0 40px #ff7fd4, 0 0 60px #ff7fd4,
+        0 0 80px #ff7fd4;
+}
+.canvas-draw {
+    width: 100%;
+    height: 100%;
+}
+.ant-table-row:hover {
+    cursor: pointer
+}
+
+.ant-table-row-selected {
+    background-color: dodgerblue;
+}
+
+.editable-row:hover .editable-cell-value-wrap {
+    padding: 4px 11px;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}

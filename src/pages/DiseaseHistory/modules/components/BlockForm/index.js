@@ -12,7 +12,7 @@ function BlockForm() {
     const onFieldsChange = useStore((store) => store.onFieldsChange)
 
     return (
-        <SimpleGrid columns={['1', '2']} gap='1' >
+        <SimpleGrid gap={[1,2]} columns="2" >
 
             <Form
                 form={diseaseHistoryForm}

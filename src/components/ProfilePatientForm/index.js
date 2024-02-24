@@ -1,112 +1,118 @@
-import React, { memo } from 'react'
-import { Button, Form, Space, Input, InputNumber } from 'antd'
-import { useGlobalContext } from '../../modules/context/index.js'
-import { ArrowsAltOutlined, ShrinkOutlined } from "@ant-design/icons";
-import { Box, Collapse, useMediaQuery } from "@chakra-ui/react";
-import useResetProfilePatient from '../../modules/hooks/useResetProfilePatient.js'
-import useSavePatient from '../../modules/hooks/useSavePatient.js'
-import { useStore } from '../../modules/store/index.js';
-
+import React, { memo } from "react";
+import { Button, Form, Space, Input, InputNumber } from "antd";
+import { useGlobalContext } from "../../modules/context/index.js";
+import { SimpleGrid, useMediaQuery } from "@chakra-ui/react";
+import useResetProfilePatient from "../../modules/hooks/useResetProfilePatient.js";
+import useSavePatient from "../../modules/hooks/useSavePatient.js";
+import { useStore } from "../../modules/store/index.js";
 
 function ProfilePatientForm() {
+    const { patientForm } = useGlobalContext();
 
-    const {
-        patientForm,
-        inPatientCollapse,
-        setInPatientCollapse,
-    } = useGlobalContext()
-
-
-    const [isLargerThan600] = useMediaQuery('(min-width: 600px)')
+    const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
 
     const { resetProfilePatient } = useResetProfilePatient();
 
     const handleClear = () => {
-        resetProfilePatient()
-    }
+        resetProfilePatient();
+    };
 
-    const { handleSave, isLoading } = useSavePatient()
+    const { handleSave, isLoading } = useSavePatient();
 
-    const onFieldsChange = useStore((store) => store.onFieldsChange)
+    const onFieldsChange = useStore((store) => store.onFieldsChange);
 
     return (
-        <Box boxShadow='xl' p='2' bg='pink.100' borderRadius='15px' >
+        <>
             <Form
-                id='patientForm'
+                id="patientForm"
                 onFinish={handleSave}
                 form={patientForm}
-                layout={isLargerThan600 ? "inline" : "vertical"}
+                labelWrap
+                labelAlign="right"
+                labelCol={{
+                    span: 8,
+                }}
+                wrapperCol={{
+                    span: 16,
+                }}
                 onFieldsChange={onFieldsChange}
             >
-                <Form.Item
-                    label="Name"
+                <SimpleGrid
+                    gap={[1, 2]}
+                    columns="3"
+                    p="2"
+                    my="2"
+                    boxShadow="xl"
+                    bg="pink.50"
+                    borderRadius="15px"
                 >
-                    <Space.Compact>
+                    <Form.Item label="Name">
+                        <Space.Compact>
+                            <Form.Item
+                                key="patientName"
+                                name="patientName"
+                                noStyle
+                            >
+                                <Input placeholder="Name" />
+                            </Form.Item>
 
-                        <Form.Item
-                            noStyle
-                            key="patientName"
-                            name="patientName"
-                        >
-                            <Input placeholder="Name" />
-                        </Form.Item>
-
-                        <Form.Item
-                            name="patientId"
-                            noStyle
-                        >
-                            <InputNumber readOnly addonBefore='№' placeholder="Patient №" />
-                        </Form.Item>
-
-                        <Button
-                            type='ghost'
-                            onClick={() => setInPatientCollapse(prev => !prev)}
-                            icon={inPatientCollapse ? <ArrowsAltOutlined /> : <ShrinkOutlined />}
-
-                        />
-
-                    </Space.Compact>
-                </Form.Item>
-
-                <Collapse in={inPatientCollapse} animateOpacity>
-                    <Form
-                        form={patientForm}
-                        layout={isLargerThan600 ? "inline" : "vertical"}
-                        onFieldsChange={onFieldsChange}
+                            <Form.Item name="patientId" noStyle>
+                                <InputNumber
+                                    readOnly
+                                    addonBefore="№"
+                                    placeholder="Patient №"
+                                />
+                            </Form.Item>
+                        </Space.Compact>
+                    </Form.Item>
+                    <Form.Item
+                        key="patientSurName"
+                        name="patientSurName"
+                        label="Suriname"
                     >
+                        <Input placeholder="Suriname" />
+                    </Form.Item>
 
-                        <Form.Item key="patientSurName" name="patientSurName" label="Suriname">
-                            <Input placeholder="Suriname" />
-                        </Form.Item>
-
-                        <Form.Item key="patientPatronymic" label="Patronymic" name="patientPatronymic">
-                            <Input />
-                        </Form.Item>
-
-                    </Form>
-                </Collapse>
-
-                <Form.Item noStyle>
-                    <Space>
-                        <Button
-                            onClick={handleSave}
-                            form='patientForm'
-                            type="primary"
-                            htmlType='submit'
-                            loading={isLoading}
-                        >
-                            Save
-                        </Button>
-
-                        <Button onClick={handleClear} danger>
-                            Clear
-                        </Button>
-                    </Space>
-
-                </Form.Item>
+                    <Form.Item
+                        key="patientPatronymic"
+                        label="Patronymic"
+                        name="patientPatronymic"
+                    >
+                        <Input />
+                    </Form.Item>
+                </SimpleGrid>
             </Form>
-        </Box>
-    )
+
+            <Space
+                style={{
+                    position: "fixed",
+                    top: isLargerThan600 && 43,
+                    bottom: !isLargerThan600 && 53,
+                    right: isLargerThan600 ? 40 : 10,
+                    zIndex: 60,
+                }}
+            >
+                <Button
+                    onClick={handleSave}
+                    form="patientForm"
+                    type="primary"
+                    htmlType="submit"
+                    loading={isLoading}
+                    size={isLargerThan600 ? "middle" : "small"}
+                >
+                    Save
+                </Button>
+
+                <Button
+                    onClick={handleClear}
+                    danger
+                    size={isLargerThan600 ? "middle" : "small"}
+                >
+                    Clear
+                </Button>
+            </Space>
+        </>
+    );
 }
 
-export default memo(ProfilePatientForm)
+export default memo(ProfilePatientForm);

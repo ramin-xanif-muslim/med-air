@@ -1,6 +1,5 @@
 import { Box } from '@chakra-ui/react'
 import React, { memo, useState } from 'react'
-import ProfilePatientForm from '../../components/ProfilePatientForm'
 import TreatmentFormBloke from './modules/components/TreatmentFormBloke'
 import TreatmentTableFormBloke from './modules/components/TreatmentTableFormBloke'
 import TreatmentTable from './modules/components/TreatmentTable'
@@ -15,8 +14,6 @@ function Treatment() {
 
   return (
     <>
-      <ProfilePatientForm />
-
       <Box p='2' my='2' boxShadow='xl' bg='pink.50' borderRadius='15px'>
 
         <TreatmentFormBloke />

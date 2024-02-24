@@ -26,13 +26,14 @@ const profileSubMenus = ['person_info','disease_history','visits','analysis','tr
 const items = [
     getItem('Calendar', 'calendar', <CalendarOutlined />),
     getItem('Search', 'search', <FileSearchOutlined />),
-    getItem('Profile', 'profile', <ProfileOutlined />, [
-        getItem('Person info', 'person_info'),
-        getItem('Disease history', 'disease_history'),
-        getItem('Visits', 'visits'),
-        getItem('Analysis', 'analysis'),
-        getItem('Treatment', 'treatment'),
-    ]),
+    getItem('Profile', 'profile', <ProfileOutlined />),
+    // getItem('Profile', 'profile', <ProfileOutlined />, [
+    //     getItem('Person info', 'person_info'),
+    //     getItem('Disease history', 'disease_history'),
+    //     getItem('Visits', 'visits'),
+    //     getItem('Analysis', 'analysis'),
+    //     getItem('Treatment', 'treatment'),
+    // ]),
     getItem('Managers', 'managers', <UserOutlined />, [
         getItem('Reception locations', 'reception_locations'),
         getItem('Medications', 'medications'),

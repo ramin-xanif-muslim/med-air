@@ -1,6 +1,5 @@
 import React, { memo, useState } from 'react'
 import DiseaseHistoryFormBloke from './modules/components/DiseaseHistoryFormBloke'
-import ProfilePatientForm from '../../components/ProfilePatientForm'
 import BlockForm from './modules/components/BlockForm'
 import BlockCanvas from './modules/components/BlockCanvas'
 import { Box } from '@chakra-ui/react'
@@ -15,8 +14,6 @@ function DiseaseHistory() {
 
     return (
         <>
-            <ProfilePatientForm />
-
             <Box p='2' my='2' boxShadow='xl' bg='pink.50' borderRadius='15px'>
 
                 <Box p='2' my='2' border='1px solid pink' borderRadius='15px' bg={selectedRowKey ? 'blue.50' : ''}>

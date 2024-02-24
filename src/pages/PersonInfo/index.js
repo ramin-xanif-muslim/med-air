@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import { Checkbox, DatePicker, Form, Input, InputNumber, Rate, Select } from "antd";
 import { SimpleGrid } from '@chakra-ui/react';
-import ProfilePatientForm from '../../components/ProfilePatientForm';
 import { useGlobalContext } from '../../modules/context/index.js';
 import { useStore } from '../../modules/store';
 
@@ -16,9 +15,7 @@ function PersonInfo() {
 
     return (
         <>
-            <ProfilePatientForm />
-
-            <SimpleGrid columns={['1', '2']} p='2' my='2' boxShadow='xl' bg='pink.50' borderRadius='15px'>
+            <SimpleGrid gap={[1,2]} columns="2" p='2' my='2' boxShadow='xl' bg='pink.50' borderRadius='15px'>
 
                 <Form
                     form={personInfoForm}

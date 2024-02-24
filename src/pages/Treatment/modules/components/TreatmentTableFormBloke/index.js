@@ -58,7 +58,7 @@ function TreatmentTableFormBloke(props) {
 
     return (
 
-        <SimpleGrid columns={['1', '2']} gap='1' >
+        <SimpleGrid gap={[1,2]} columns="2"  >
 
             <Form
                 onFinish={onFinish}

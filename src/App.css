@@ -25,7 +25,7 @@
     height: 100%;
 }
 .ant-table-row:hover {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .ant-table-row-selected {

@@ -2,7 +2,6 @@ import React, { memo, useState } from 'react'
 import { Box } from '@chakra-ui/react'
 import VisitsTable from './modules/components/VisitsTable';
 import VisitsFormBloke from './modules/components/VisitsFormBloke';
-import ProfilePatientForm from '../../components/ProfilePatientForm';
 import { Form } from 'antd';
 
 function Visits() {
@@ -13,8 +12,6 @@ function Visits() {
 
     return (
         <>
-            <ProfilePatientForm />
-
             <Box p='2' my='2' boxShadow='xl' bg='pink.50' borderRadius='15px'>
 
                 <Box p='2' my='2' border='1px solid pink' borderRadius='15px' bg={selectedRowKey ? 'blue.50' : ''}>

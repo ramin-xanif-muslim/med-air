@@ -36,7 +36,7 @@ function DiseaseHistoryFormBloke(props) {
     }
 
     return (
-        <SimpleGrid columns={['1', '2']} >
+        <SimpleGrid gap={[1,2]} columns="2"  >
 
             <Form
                 onFinish={onFinish}

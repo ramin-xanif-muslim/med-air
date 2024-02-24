@@ -18,7 +18,7 @@ function CalendarsCalendarPage(props) {
 
     const onClickNewPatientButton = () => {
       resetProfilePatient();
-      navigate("/person_info");
+      navigate("/profile");
     };
 
     return (

@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import { Layout } from "antd";
 import { ErrorBoundary } from "./pages/Error";
 import BottomBar from "./components/BottomBar/BottomBar";
+import Alert from "./components/Alert";
 
 function App() {
     // useEffectOnDidMountApp()
@@ -15,7 +16,7 @@ function App() {
 
     const token = useLocalStorageStore((store) => store.token);
 
-    // if (!token) return <Login />;
+    if (!token) return <Login />;
 
     return (
         <Layout
@@ -36,6 +37,7 @@ function App() {
                 >
                     <Box p={["1", "4"]} mb={[10, null]}>
                         {/* <Breadcrumb /> */}
+                        <Alert />
 
                         <ErrorBoundary>
                             <ReactComponent />

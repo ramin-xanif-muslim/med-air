@@ -6,7 +6,6 @@ import { Box } from "@chakra-ui/react";
 import { useStore } from "../../modules/store";
 import dayjs from "dayjs";
 import { useOnRowTable } from "../../modules/hooks/useOnRowTable";
-import Alert from "../../components/Alert";
 
 const Search = () => {
 
@@ -48,8 +47,6 @@ const Search = () => {
 
     return (
         <>
-            <Alert />
-
             <Box boxShadow='xl' p='2' bg='pink.100' borderRadius='15px' >
 
                 <Box boxShadow='xl' p='2' bg='pink.50' borderRadius='15px' >

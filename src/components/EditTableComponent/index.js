@@ -44,12 +44,7 @@ const EditableCell = ({
 };
 
 const EditTable = (props) => {
-    const {
-        dataSource,
-        setDataSource,
-        defaultColumns,
-        onChange,
-    } = props;
+    const { dataSource, setDataSource, defaultColumns, onChange } = props;
 
     const handleSave = (row) => {
         const newData = [...dataSource];
@@ -57,7 +52,7 @@ const EditTable = (props) => {
         const item = newData[index];
         newData.splice(index, 1, { ...item, ...row });
         setDataSource(newData);
-        onChange?.()
+        onChange?.();
     };
 
     const components = {
@@ -86,10 +81,11 @@ const EditTable = (props) => {
     return (
         <div>
             <Table
-                size='small'
+                size="small"
                 bordered
                 scroll={{
-                    x: window.innerHeight
+                    x: window.innerHeight,
+                    y: window.innerHeight - 200,
                 }}
                 rowClassName={() => "editable-row"}
                 components={components}

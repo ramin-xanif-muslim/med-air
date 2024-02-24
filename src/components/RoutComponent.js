@@ -15,6 +15,7 @@ const ReceptionLocations = React.lazy(() =>
 );
 const Medications = React.lazy(() => import("../pages/Medications"));
 const Pathologists = React.lazy(() => import("../pages/Pathologists"));
+const Managers = React.lazy(() => import("../pages/Managers"));
 
 const ReactComponent = () => {
     return (
@@ -27,6 +28,7 @@ const ReactComponent = () => {
             }
         >
             <Routes>
+                <Route path="/managers" element={<Managers />} />
                 <Route path="/pathologists" element={<Pathologists />} />
                 <Route path="/medications" element={<Medications />} />
                 <Route

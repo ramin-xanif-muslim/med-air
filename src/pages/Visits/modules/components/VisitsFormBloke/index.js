@@ -9,7 +9,7 @@ import {
     Select,
     Space,
 } from "antd";
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid, useMediaQuery } from "@chakra-ui/react";
 import { useLocalStorageStore, useStore } from "../../../../../modules/store";
 import dayjs from "dayjs";
 import { useQuery } from "react-query";
@@ -17,6 +17,8 @@ import { fetchManagersPlace } from "../../../../../modules/api";
 
 function VisitsFormBloke(props) {
     const { selectedRowKey, setSelectedRowKey, form } = props;
+
+    const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
 
     const dataSourceVisitTable = useStore(
         (store) => store.dataSourceVisitTable
@@ -313,7 +315,11 @@ function VisitsFormBloke(props) {
                     }}
                 </Form.Item>
 
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                <Form.Item
+                    wrapperCol={
+                        isLargerThan800 ? { offset: 8, span: 16 } : null
+                    }
+                >
                     <Space>
                         <Button
                             form="visitTableFormBlok"

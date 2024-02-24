@@ -9,6 +9,7 @@ import ProfilePatientForm from "../ProfilePatientForm";
 import styles from "./styles.module.css";
 import { Box, VStack } from "@chakra-ui/react";
 import Navigation from "./shared/components/Navigation";
+import Buttons from "./shared/components/Buttons";
 
 const ProfilePage = () => {
     const { ref: refPatient, inView: inViewPatient } = useInView();
@@ -20,7 +21,7 @@ const ProfilePage = () => {
     const { ref: refTreatment, inView: inViewTreatment } = useInView();
     return (
         <Box scrollSnapAlign="center" className={styles.container}>
-            <VStack bg="pink.200" className={styles.header}>
+            <VStack h="25px" bg="pink.200" className={styles.header}>
                 <Navigation
                     inViewPatient={inViewPatient}
                     inViewPersonInfo={inViewPersonInfo}
@@ -30,6 +31,7 @@ const ProfilePage = () => {
                     inViewTreatment={inViewTreatment}
                 />
             </VStack>
+            <Buttons />
             <section className={styles.section} ref={refPatient}>
                 <hr />
                 <h2 id="Patient">Patient</h2>

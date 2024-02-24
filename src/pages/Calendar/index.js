@@ -6,7 +6,6 @@ import moment from "moment";
 import sendRequest from "../../modules/api/sendRequest";
 import { useStore } from "../../modules/store";
 import { useQuery } from "react-query";
-import Alert from "../../components/Alert";
 
 function Calendar() {
     const selectedDate = useStore((store) => store.selectedDate);
@@ -42,8 +41,6 @@ function Calendar() {
 
     return (
         <>
-            <Alert />
-
             <Flex
                 flexDirection={["column", "column", "column", "column", "row"]}
                 boxShadow="xl"

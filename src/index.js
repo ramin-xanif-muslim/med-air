@@ -1,24 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ChakraProvider } from "@chakra-ui/react";
 import { ErrorBoundary } from "./pages/Error";
-import { AppProvider } from './modules/context/index.js';
+import { AppProvider } from "./modules/context/index.js";
 
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
             refetchOnMount: true,
-            refetchOnWindowFocus: true,
+            refetchOnWindowFocus: false,
         },
     },
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>

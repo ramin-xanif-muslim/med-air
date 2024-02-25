@@ -50,7 +50,7 @@ function Calendar() {
                 w="full"
                 gap="2"
             >
-                <Box position="relative" flex="1">
+                <Box>
                     <CalendarsCalendarPage
                         refetch={refetch}
                         cellRender={cellRender}

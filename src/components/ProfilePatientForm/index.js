@@ -10,7 +10,9 @@ function ProfilePatientForm() {
 
     const { handleSave } = useSavePatient();
 
-    const onFieldsChange = useStore((store) => store.onFieldsChange);
+    const { onFieldsChange } = useStore((store) => ({
+        onFieldsChange: store.onFieldsChange,
+    }));
 
     return (
         <>
@@ -30,38 +32,29 @@ function ProfilePatientForm() {
             >
                 <SimpleGrid
                     gap={[1, 2]}
-                    columns={[1, 3]}
+                    columns={[2, 3]}
                     p="2"
                     my="2"
                     boxShadow="xl"
                     bg="pink.50"
                     borderRadius="15px"
                 >
-                    <Form.Item label="Name">
-                        <Space.Compact>
-                            <Form.Item
-                                key="patientName"
-                                name="patientName"
-                                noStyle
-                            >
-                                <Input placeholder="Name" />
-                            </Form.Item>
-
-                            <Form.Item name="patientId" noStyle>
-                                <InputNumber
-                                    readOnly
-                                    addonBefore="№"
-                                    placeholder="Patient №"
-                                />
-                            </Form.Item>
-                        </Space.Compact>
+                    <Form.Item name="patientId" hidden>
+                        <InputNumber readOnly prefix="№" />
+                    </Form.Item>
+                    <Form.Item
+                        key="patientName"
+                        name="patientName"
+                        label="Name"
+                    >
+                        <Input />
                     </Form.Item>
                     <Form.Item
                         key="patientSurName"
                         name="patientSurName"
                         label="Suriname"
                     >
-                        <Input placeholder="Suriname" />
+                        <Input />
                     </Form.Item>
 
                     <Form.Item

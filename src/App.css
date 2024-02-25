@@ -37,3 +37,15 @@
     border: 1px solid #d9d9d9;
     border-radius: 5px;
 }
+.calendars-table-wrapper {
+    overflow-x: auto;
+    max-width: 99%;
+    /* width: 100%; */
+}
+
+/* Применить ширину 100% для обертки таблицы при маленьких экранах */
+@media (max-width: 768px) {
+    .calendars-table-wrapper {
+        max-width: 100%;
+    }
+}

@@ -254,11 +254,13 @@ function CalendarsTable(props) {
             </Box>
 
             <Table
+                className="calendars-table-wrapper"
                 loading={isLoading || isLoadingOnSelectCalendar}
                 size="small"
                 bordered
                 scroll={{
                     y: window.innerHeight - 120,
+                    x: window.innerHeight,
                 }}
                 pagination={false}
                 columns={columns.filter((i) => i.isVisible === true)}

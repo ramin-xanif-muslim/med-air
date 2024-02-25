@@ -5,11 +5,6 @@ import ProfilePage from "./ProfilePage/ProfilePage";
 
 const Calendar = React.lazy(() => import("../pages/Calendar"));
 const Search = React.lazy(() => import("../pages/Search"));
-const PersonInfo = React.lazy(() => import("../pages/PersonInfo"));
-const DiseaseHistory = React.lazy(() => import("../pages/DiseaseHistory"));
-const Visits = React.lazy(() => import("../pages/Visits"));
-const Analysis = React.lazy(() => import("../pages/Analysis"));
-const Treatment = React.lazy(() => import("../pages/Treatment"));
 const ReceptionLocations = React.lazy(() =>
     import("../pages/ReceptionLocations")
 );
@@ -35,11 +30,6 @@ const ReactComponent = () => {
                     path="/reception_locations"
                     element={<ReceptionLocations />}
                 />
-                <Route path="/treatment" element={<Treatment />} />
-                <Route path="/analysis" element={<Analysis />} />
-                <Route path="/visits" element={<Visits />} />
-                <Route path="/disease_history" element={<DiseaseHistory />} />
-                <Route path="/person_info" element={<PersonInfo />} />
                 <Route path="/search" element={<Search />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/profile" element={<ProfilePage />} />
